@@ -1,5 +1,4 @@
-package projet;
-
+package barca_game;
 public class Test {
 
 	public static void main(String[] args) {

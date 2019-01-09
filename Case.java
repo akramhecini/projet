@@ -1,9 +1,9 @@
-package projet;
+package barca_game;
 
 public class Case {
 	 int x;
 	 int y;
-	 Sourie sr;
+	 Souris sr;
 	 Lion ln;
 	 Elephant elph;
 	 String type;
@@ -24,7 +24,7 @@ public class Case {
 	        piece = pion;
 	    } */
 
-	    public Case(int x, int y, Sourie pion) {
+	    public Case(int x, int y, Souris pion) {
 	        super();
 	        this.x = x;
 	        this.y = y;
