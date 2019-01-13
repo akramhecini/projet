@@ -14,15 +14,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 
-/*
-class Gestion_case implements ActionListener{
-	public void actionPerformed(ActionEvent e) {
-		Object source = e.getSource();
-		return;
-	}
-}
-*/
-
 public class GUI extends JFrame{
 	
 	Container contenu;
@@ -40,6 +31,10 @@ public class GUI extends JFrame{
 	static int ncol = 10;
 	static JButton cases[][] = new JButton[nrow][ncol];
 	Color black = Color.BLACK;
+		
+	boolean first_click = true;
+	int row;
+	int col;
 	
 	JMenuBar barre_menu = new JMenuBar();
 	JMenu fichier = new JMenu("Fichiers");
@@ -74,10 +69,13 @@ public class GUI extends JFrame{
 		}
 	    
 	    this.Peupler(cases);
+	    
 	    //ajout des menus
 	    fichier.add(fichier1);
 		barre_menu.add(fichier);
 		this.setJMenuBar(barre_menu);
+		
+		
 		
 		//depend des nom icones
 		System.out.println(cases[0][3].getIcon());
@@ -89,6 +87,7 @@ public class GUI extends JFrame{
 	    setVisible(true);
 
 	}
+
 	
 	class Gestion_case implements ActionListener{
     	public void actionPerformed(ActionEvent e) {
@@ -96,9 +95,23 @@ public class GUI extends JFrame{
     		for (int i = 0; i < nrow; i++) {
     			for (int j = 0; j < ncol; j++) {
     				if (source == cases[i][j]) {
-    					System.out.println(source);
-    					System.out.println(cases[i][j].getIcon());
-    					Deplacement(i,j);
+    					if (first_click) {
+    						//verifier si on prend bien un pion correct
+    						row = i;
+    						col = j;
+    						System.out.println("pos depart: "+i+","+j);
+    						first_click = false;
+    					}
+    					else {
+    						//voir si deplacement possible
+    						//pas arriver dans autre pion ou zone effroi
+    						Deplacement(i,j);
+    						System.out.println("pos arrivee: "+i+","+j);
+    						first_click = true;
+    					}
+    					//System.out.println(source);
+    					System.out.println("icone" + cases[i][j].getIcon());
+    					
     					return;
     				}	
     			}

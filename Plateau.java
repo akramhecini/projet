@@ -42,19 +42,21 @@ public class Plateau {
 		matrice[3][6] = new Case(3,6,true);
 		matrice[6][3] = new Case(6,3,true);
 		matrice[6][6] = new Case(6,6,true);
-
-
+		
+		System.out.println("plateau initialisé en mode classique");
 	}
 
 	public void afficher(){
 		for(int i=0; i<matrice.length; i++){
 			for(int j=0; j<matrice.length; j++){
-
-				if(this.matrice[i][j].sr == null && this.matrice[i][j].ln == null && this.matrice[i][j].elph == null  )
+				System.out.print(this.matrice[i][j].type);
+				/*
+				if(this.matrice[i][j].sr == null && this.matrice[i][j].ln == null && this.matrice[i][j].elph == null)
 					System.out.print(" ");
 				else{
-					System.out.print(this.matrice[i][j].type+" ");
+					System.out.print(this.matrice[i][j].type+"");
 				}
+				*/
 
 			}
 			System.out.println();

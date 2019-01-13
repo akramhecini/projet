@@ -10,10 +10,13 @@ public class Elephant extends Pawn {
 	
     public boolean MovementLegal(Plateau board, int fromX, int fromY, int toX, int toY){
     	
+    	int lim_x = board.nrow - 1;
+        int lim_y = board.nrow - 1;
+    	
         if(toX == fromX && toY == fromY)
             return false; 
         
-        if(toX < 0 || toX > 9 || fromX < 0 || fromX > 9 || toY < 0 || toY > 9 || fromY <0 || fromY > 9)
+        if (toX < 0 || toX > lim_x || fromX < 0 || fromX > lim_x || toY < 0 || toY > lim_y || fromY < 0 || fromY > lim_y)
             return false;
         
         if(toX == fromX || toY == fromY) 
@@ -28,6 +31,14 @@ public class Elephant extends Pawn {
         
         return true;
     }
+
+
+
+	@Override
+	public void SeDeplacer(Plateau board, int From_x, int From_y, int to_x, int to_y) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

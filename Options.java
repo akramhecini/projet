@@ -38,21 +38,6 @@ public class Options extends JFrame {
 		//cards.add(card1, "Test");
 		
 		/*
-		 * 
-		 * class Gestion_case implements ActionListener{
-	
-	public void actionPerformed(ActionEvent e) {
-		Object source = e.getSource();
-		for (int i = 0; i < nrow; i++) {
-			for (int j = 0; j < ncol; j++) {
-				if (source == cases[i][j]) {
-					Deplacement(i,j);
-					return;
-				}	
-			}
-		}
-	}
-}
 
 
 		bouton.addActionListener(new ActionListener(){

@@ -9,21 +9,26 @@ public class Souris extends Pawn {
 	
 	@Override
     public boolean MovementLegal(Plateau board, int fromX, int fromY, int toX, int toY){
+		
+		int lim_x = board.nrow - 1;
+        int lim_y = board.nrow - 1;
     	
         if(toX == fromX && toY == fromY)
             return false; 
         
-        if(toX < 0 || toX > 9 || fromX < 0 || fromX > 9 || toY < 0 || toY > 9 || fromY <0 || fromY > 9)
+        if (toX < 0 || toX > lim_x || fromX < 0 || fromX > lim_x || toY < 0 || toY > lim_y || fromY < 0 || fromY > lim_y)
             return false;
         
         if(toX != fromX && toY != fromY) // elle se deplace pas en diagonale
         	return false; 
         
+        /*
         if(board.matrice[toX-1][toY].ln.type != "L" || board.matrice[toX+1][toY].ln.type != "L")
         	return false;
+        
         if(board.matrice[toX][toY-1].ln.type != "L" || board.matrice[toX][toY+1].ln.type != "L")
         	return false;
-        
+        */
         return true;
     }
 

@@ -1,6 +1,6 @@
 package barca_game;
 
-public class Pawn {
+abstract public class Pawn {
 
 	    int x;
 	    int y;
@@ -17,14 +17,19 @@ public class Pawn {
 
 	    
 	    public boolean MovementLegal(Plateau board, int fromX, int fromY, int toX, int toY){
-	    	
+	        int lim_x = board.nrow - 1;
+	        int lim_y = board.nrow - 1;
+	        
+	    	//rester sur place
 	        if (toX == fromX && toY == fromY)
 	            return false; 
-	        
-	        if (toX < 0 || toX > 9 || fromX < 0 || fromX > 9 || toY < 0 || toY > 9 || fromY < 0 || fromY > 9)
+
+	        if (toX < 0 || toX > lim_x || fromX < 0 || fromX > lim_x || toY < 0 || toY > lim_y || fromY < 0 || fromY > lim_y)
 	            return false;
 	        
 	        return true;
 	    }
+	    
+	    abstract public void SeDeplacer (Plateau board, int From_x, int From_y, int to_x, int to_y);
 
 	}
