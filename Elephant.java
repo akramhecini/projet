@@ -2,8 +2,8 @@ package barca_game;
 
 public class Elephant extends Pawn {
 
-	public Elephant ( int x, int y, String type){
-		super(x,y, type);
+	public Elephant (int x, int y, String type, boolean player1){
+		super(x,y, type, player1);
 	}
 	
 	

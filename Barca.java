@@ -17,16 +17,16 @@ import javax.swing.JPanel;
  * Implementations obligatoires :
  * — dimensions et forme du plateau,
  * — configuration initiale des pions, parmi un ensemble de configurations,
- * — nouvelles sortes de pièces, nouvelles règles pour ces pièces, etc.
+ * — nouvelles sortes de pieces, nouvelles regles pour ces pieces, etc.
  * 
  *  _Votre programme
-sera capable de garder en mémoire la suite de coups d’une partie (complète
-ou non), d’annuler un ou plusieurs coups parmi les derniers joués, de sau-
+sera capable de garder en memoire la suite de coups d une partie (complete
+ou non), d annuler un ou plusieurs coups parmi les derniers joues, de sau-
 vegarder et de recharger cet historique – avec un encodage quelconque, ou
-encore, sous la forme d’un texte décrivant la suite des coups à l’aide d’une
-notation claire et complète – de dérouler son contenu étape par étape à la
-demande de l’utilisateur, de le dérouler à rebours, d’aller à sa fin ou à son
-début, etc.
+encore, sous la forme d un texte decrivant la suite des coups a� l aide d une
+notation claire et complete – de derouler son contenu etape par etape a� la
+demande de l utilisateur, de le derouler a� rebours, d aller a� sa fin ou a� son
+debut, etc.
  *
  */
 
@@ -45,8 +45,8 @@ début, etc.
 public class Barca extends JPanel{
 	
 	Barca(){
-		GraphicInterface ardoise = new GraphicInterface(1000,800,10,10);
-		this.add(ardoise);
+		//GraphicInterface ardoise = new GraphicInterface(1000,800,10,10);
+		//this.add(ardoise);
 		//GridInterface grid = new GridInterface(ardoise);
 		//this.add(grid);
 	}

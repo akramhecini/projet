@@ -2,8 +2,8 @@ package barca_game;
 
 public class Souris extends Pawn {
 	
-	public Souris ( int x, int y, String type){
-		super(x,y, type);
+	public Souris (int x, int y, String type, boolean player1){
+		super(x,y, type, player1);
 	}
 	
 	
@@ -16,7 +16,7 @@ public class Souris extends Pawn {
         if(toX < 0 || toX > 9 || fromX < 0 || fromX > 9 || toY < 0 || toY > 9 || fromY <0 || fromY > 9)
             return false;
         
-        if(toX != fromX && toY != fromY) // elle se deplace pas en diaginal 
+        if(toX != fromX && toY != fromY) // elle se deplace pas en diagonale
         	return false; 
         
         if(board.matrice[toX-1][toY].ln.type != "L" || board.matrice[toX+1][toY].ln.type != "L")
@@ -34,7 +34,7 @@ public class Souris extends Pawn {
 		if(reponse == true){
 			//board.matrice[From_x][From_y] = new Case(From_x, From_y); // PIECE = NULL
 			board.matrice[From_x][From_y].sr = null;
-			board.matrice[to_x][to_y] = new Case(to_x, to_y, new Souris(to_x,to_y, "S"));
+			board.matrice[to_x][to_y] = new Case(to_x, to_y, new Souris(to_x,to_y, "S", isPlayer1));
 			board.afficher();
 		}
 	} 

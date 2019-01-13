@@ -7,9 +7,11 @@ public class Case {
 	 Lion ln;
 	 Elephant elph;
 	 String type;
+	 
+	 //Pawn pion;
 
 	    public Case(int x, int y) {
-	        super();
+	    	//case vide par défaut
 	        this.x = x;
 	        this.y = y;
 	        sr = null;
@@ -17,7 +19,20 @@ public class Case {
 	        elph = null;
 	    }
 	    
-	 /*   public Case(int x, int y, Pawn pion) {
+	    public Case(int x, int y, boolean water) {
+	    	this.x = x;
+	        this.y = y;
+	        sr = null;
+	        ln = null;
+	        elph = null;
+	        
+	    	if (water) {
+	    		this.type = "W";
+	    	}    
+	    }
+	    
+	    /*
+	    public Case(int x, int y, Pawn pion) {
 	        super();
 	        this.x = x;
 	        this.y = y;
@@ -25,7 +40,6 @@ public class Case {
 	    } */
 
 	    public Case(int x, int y, Souris pion) {
-	        super();
 	        this.x = x;
 	        this.y = y;
 	        sr = pion;
@@ -33,7 +47,6 @@ public class Case {
 	    }
 	    
 	    public Case(int x, int y, Lion pion) {
-	        super();
 	        this.x = x;
 	        this.y = y;
 	        ln = pion;
@@ -41,14 +54,14 @@ public class Case {
 	    }
 	    
 	    public Case(int x, int y, Elephant pion) {
-	        super();
 	        this.x = x;
 	        this.y = y;
 	        elph = pion;
 	        this.type = "E";
 	    }
 	    
+	    //public getPion() {}
 	    
 	    
-	    
+    
 }
