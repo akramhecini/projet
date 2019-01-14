@@ -3,9 +3,9 @@ package barca_game;
 public class Case {
 	int x;
 	int y;
-	Souris sr;
-	Lion ln;
-	Elephant elph;
+	//Souris sr;
+	//Lion ln;
+	//Elephant elph;
 	String type;
 
 	Pawn pion;
@@ -14,10 +14,11 @@ public class Case {
 		//case vide par défaut, mettre un type ?
 		this.x = x;
 		this.y = y;
-		sr = null;
-		ln = null;
-		elph = null;
-		this.type = " ";
+		//sr = null;
+		//ln = null;
+		//elph = null;
+		this.pion = null;
+		this.type = "_";
 	}
 
 	public Case(int x, int y, boolean water) {

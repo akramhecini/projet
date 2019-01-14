@@ -128,7 +128,7 @@ public class GUI extends JFrame{
 
 	public void Peupler(JButton[][] cases) {
 		//cas classique
-		//generaliser lors de population plateau
+		//generaliser lors de population plateau avec Case[][] ?
 	    cases[0][3].setIcon(wlion);
 		cases[0][6].setIcon(wlion);
 		cases[0][4].setIcon(wmouse);

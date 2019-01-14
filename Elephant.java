@@ -3,28 +3,25 @@ package barca_game;
 public class Elephant extends Pawn {
 
 	public Elephant (int x, int y, String type, boolean player1){
-		super(x,y, type, player1);
+		super(x, y, type, player1);
 	}
 	
 	
 	
     public boolean MovementLegal(Plateau board, int fromX, int fromY, int toX, int toY){
     	
-    	int lim_x = board.nrow - 1;
-        int lim_y = board.nrow - 1;
-    	
         if(toX == fromX && toY == fromY)
             return false; 
         
-        if (toX < 0 || toX > lim_x || fromX < 0 || fromX > lim_x || toY < 0 || toY > lim_y || fromY < 0 || fromY > lim_y)
+        if ((inBoard(board, fromX, fromY) == false) || (inBoard(board, toX, toY) == false))
             return false;
         
         if(toX == fromX || toY == fromY) 
         	return false; 
         
-        if(board.matrice[toX-1][toY].sr.type != "S" || board.matrice[toX+1][toY].sr.type != "S")
+        if(board.matrice[toX-1][toY].pion.type != "S" || board.matrice[toX+1][toY].pion.type != "S")
         	return false;
-        if(board.matrice[toX][toY-1].sr.type != "S" || board.matrice[toX][toY+1].sr.type != "S")
+        if(board.matrice[toX][toY-1].pion.type != "S" || board.matrice[toX][toY+1].pion.type != "S")
         	return false;
         
         
