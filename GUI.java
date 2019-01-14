@@ -29,6 +29,7 @@ public class GUI extends JFrame{
 	
 	static int nrow = 10;
 	static int ncol = 10;
+	Plateau board;
 	static JButton cases[][] = new JButton[nrow][ncol];
 	Color black = Color.BLACK;
 		
@@ -38,7 +39,7 @@ public class GUI extends JFrame{
 	
 	JMenuBar barre_menu = new JMenuBar();
 	JMenu fichier = new JMenu("Fichiers");
-	JMenuItem fichier1 = new JMenuItem("Nouvelle Partie");
+	JMenuItem fichier1 = new JMenuItem("Nouvelle Partie (unimplemented)");
 	
 	
 	public static void main(String[] args)
@@ -49,7 +50,8 @@ public class GUI extends JFrame{
 	
 	public GUI (){
 		super("plateau");
-
+		
+		this.board = new Plateau(this.nrow,this.ncol);
 	    contenu = getContentPane();
 	    contenu.setLayout(new GridLayout(nrow, ncol));
 	    
@@ -68,7 +70,7 @@ public class GUI extends JFrame{
 			}
 		}
 	    
-	    this.Peupler(cases);
+	    this.Peupler(cases, board);
 	    
 	    //ajout des menus
 	    fichier.add(fichier1);
@@ -77,11 +79,6 @@ public class GUI extends JFrame{
 		
 		
 		
-		//depend des nom icones
-		System.out.println(cases[0][3].getIcon());
-		if (cases[0][3].getIcon() == wlion) {
-			System.out.println("Lion BLANC");
-		}
 	    
 	    setSize(1000,1000);
 	    setVisible(true);
