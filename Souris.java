@@ -1,4 +1,4 @@
-package barca_game;
+package projet;
 
 public class Souris extends Pawn {
 	
@@ -28,8 +28,37 @@ public class Souris extends Pawn {
         
         	
         //verifier que case n'est pas un pion, ni effrayé par ennemi
-        //verifier que ne passe pas au dessus de pion
+        
+        
+        //verifier que ne passe pas au dessus de pion: 2 cas : vertical ou horiz
+        
+        if(fromX == toX){
+    	for(int i = 0; i <= toY; i++) {
+    		if (board.matrice[fromX][i].pion != null)
+    			return false;
+    	}}
+        
+        if(fromY == toY){
+    	for(int j = 0; j <= toX; j++) {
+    		if (board.matrice[j][toY].pion != null)
+    			return false;
+    	}}
+        
         //lors de verif cases adjacentes, attention au cas si + ou - index est out of bound
+        // out of bound est vérifié au sein de la fonction EstPionEffrayant
+        
+        if(EstPionEffrayant(board,fromX,fromY,toX-1,toY)==true || EstPionEffrayant(board,fromX,fromY,toX+1,toY) ==true)
+        	return false;
+        
+        if(EstPionEffrayant(board,fromX,fromY,toX,toY-1)==true|| EstPionEffrayant(board,fromX,fromY,toX,toY+1) == true)
+        	return false;
+
+        if(EstPionEffrayant(board,fromX,fromY,toX-1,toY-1)==false || EstPionEffrayant(board,fromX,fromY,toX+1,toY+1) == false)
+        	return false;
+        if(EstPionEffrayant(board,fromX,fromY,toX+1,toY-1)==false || EstPionEffrayant(board,fromX,fromY,toX-1,toY+1) == false)
+        	return false;
+        
+        
         
         /*
         if(board.matrice[toX-1][toY].pion.type != "L" || board.matrice[toX+1][toY].pion.type != "L")
@@ -39,6 +68,19 @@ public class Souris extends Pawn {
         	return false;
         */
         return true;
+    }
+	
+    public boolean EstPionEffrayant(Plateau board, int x,int y, int tox, int toy){
+    	
+    	if (tox < 0 || tox > board.nrow )
+    		return true;
+    	if (toy < 0 || toy > board.nrow )
+    		return true;
+    	if(board.matrice[x][y].pion.isPlayer1 != board.matrice[tox][toy].pion.isPlayer1){
+    		if(board.matrice[tox][toy].pion.type == "L" || board.matrice[tox][toy].pion.type == "L")
+    			return true;
+    	}
+    	return false;
     }
 
 
@@ -55,6 +97,8 @@ public class Souris extends Pawn {
 			board.afficher();
 		}
 	} 
+	
+	
 	
 	
 }
