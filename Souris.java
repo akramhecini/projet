@@ -28,8 +28,9 @@ public class Souris extends Pawn {
         
         	
         //verifier que case n'est pas un pion, ni effrayé par ennemi
-        //verifier que ne passe pas au dessus de pion
+        //verifier que ne passe pas au dessus de pion -> dans movementDiag/Perpendic
         //lors de verif cases adjacentes, attention au cas si + ou - index est out of bound
+        // -> boucles pour verifier les environs de toX,toY
         
         /*
         if(board.matrice[toX-1][toY].pion.type != "L" || board.matrice[toX+1][toY].pion.type != "L")

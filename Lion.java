@@ -37,6 +37,17 @@ public class Lion extends Pawn {
 	@Override
 	public void SeDeplacer(Plateau board, int From_x, int From_y, int to_x, int to_y) {
 		// TODO Auto-generated method stub
+		boolean reponse = MovementLegal(board, From_x, From_y, to_x, to_y);
+		System.out.println("move legal: " + reponse);
+		if(reponse == true){
+			//board.matrice[From_x][From_y] = new Case(From_x, From_y); // PIECE = NULL
+			Pawn to_move = board.matrice[From_x][From_y].pion;
+			
+			board.matrice[From_x][From_y].pion = null;
+			board.matrice[From_x][From_y].type = "_";
+			board.matrice[to_x][to_y] = new Case(to_x, to_y, to_move);
+			board.afficher();
+		}
 		
 	}
 	
