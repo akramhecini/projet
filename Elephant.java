@@ -1,4 +1,4 @@
-package projet;
+package barca_game;
 
 public class Elephant extends Pawn {
 
