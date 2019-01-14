@@ -149,5 +149,41 @@ public class GUI extends JFrame{
 		cases[6][3].setIcon(water);
 		cases[6][6].setIcon(water);
 	}
+	
+	public void Peupler(JButton[][] cases, Plateau p) {
+		//generation des boutons a partir d'un plateau initialisé
+		
+		int nrow = p.nrow;
+		int ncol = p.ncol;
+		for(int i = 0; i < nrow; i++){
+			for(int j = 0; j < ncol; j++){
+				Case element = p.matrice[i][j];
+				//lions
+				if (element.type == "L") {
+					if(element.pion.isPlayer1)
+						cases[i][j].setIcon(wlion);
+					else
+						cases[i][j].setIcon(blion);
+				}
+				//elephants
+				if (element.type == "E" ) {
+					if(element.pion.isPlayer1)
+						cases[i][j].setIcon(weleph);
+					else
+						cases[i][j].setIcon(beleph);
+				}
+				//souris
+				if (element.type == "S") {
+					if(element.pion.isPlayer1)
+						cases[i][j].setIcon(wmouse);
+					else
+						cases[i][j].setIcon(bmouse);
+				}
+				//eau
+				if (element.type == "W")
+					cases[i][j].setIcon(water);
+			}
+		}
+	}
 
 }
